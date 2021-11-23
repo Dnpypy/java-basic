@@ -54,7 +54,7 @@ public class TypeCast {
         System.out.println(c2);
 
         // вместимость в памяти в байтах(выделение в памяти места)
-        char ch = 2; // для чар
+       //char ch = 2; // для чар
         int i = 4;   // для интежер
         double d = 8; // для дабл
 
