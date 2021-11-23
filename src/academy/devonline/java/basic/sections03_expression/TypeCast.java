@@ -52,5 +52,22 @@ public class TypeCast {
         char c2 = "dbc".charAt(0);
         System.out.println(cc);
         System.out.println(c2);
+
+        // вместимость в памяти в байтах(выделение в памяти места)
+        char ch = 2; // для чар
+        int i = 4;   // для интежер
+        double d = 8; // для дабл
+
+        // расширение области видимости
+        d = i;
+        d = ch;
+        i = ch;
+
+        i = (int) d;
+        ch = (char) d;
+        ch = (char) i;
+
+        boolean t = true;
+
     }
 }
