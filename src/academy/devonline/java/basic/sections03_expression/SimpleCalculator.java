@@ -1,4 +1,7 @@
 package academy.devonline.java.basic.sections03_expression;
+
+import java.util.Scanner;
+
 /*
  * Copyright (c) 2019. http://devonline.academy
  *
@@ -14,41 +17,28 @@ package academy.devonline.java.basic.sections03_expression;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import java.util.Scanner;
-/**
- * @author Dnpypy
- * @link http://devonline.academy/java-basic
- */
 public class SimpleCalculator {
-
     /**
-     * class variables
+     * @author devonline
+     * @link http://devonline.academy/java-basic
      */
-    static Scanner sc = new Scanner(System.in);
-    static int a;
-    static int b;
-
     public static void main(String[] args) {
-        variablesA();
-        variablesB();
-        calculator(a, b);
-    }
+        System.out.println("Enter 'a':");
+        var a = new Scanner(System.in).nextInt();
 
-    static void variablesA() {
-        System.out.println("Enter 'a': ");
-        a = sc.nextInt();
-    }
+        System.out.println("Enter 'b':");
+        var b = new Scanner(System.in).nextInt();
 
-    static void variablesB() {
-        System.out.println("Enter 'b': ");
-        b = sc.nextInt();
-    }
+        var aPlusB = a + b;
+        var aMinusB = a - b;
+        var aMulB = a * b;
+        var aDivB = a / b;
+        var aModB = a % b;
 
-    static void calculator(int a, int b) {
-        System.out.println("a + b = " + (a + b));
-        System.out.println("a - b = " + (a - b));
-        System.out.println("a * b = " + (a * b));
-        System.out.println("a / b = " + (a / b));
-        System.out.println("a % b = " + (a % b));
+        System.out.println("a + b = " + aPlusB);
+        System.out.println("a - b = " + aMinusB);
+        System.out.println("a * b = " + aMulB);
+        System.out.println("a / b = " + aDivB);
+        System.out.println("a % b = " + aModB);
     }
 }
