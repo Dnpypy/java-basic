@@ -21,22 +21,25 @@ import java.util.Scanner;
  */
 public class SimpleCalculator {
 
+    /**
+     * class variables
+     */
     static Scanner sc = new Scanner(System.in);
     static int a;
     static int b;
 
     public static void main(String[] args) {
-        outputA();
-        outputB();
+        variablesA();
+        variablesB();
         calculator(a, b);
     }
 
-    static void outputA() {
+    static void variablesA() {
         System.out.println("Enter 'a': ");
         a = sc.nextInt();
     }
 
-    static void outputB() {
+    static void variablesB() {
         System.out.println("Enter 'b': ");
         b = sc.nextInt();
     }
