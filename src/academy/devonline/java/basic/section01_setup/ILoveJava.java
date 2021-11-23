@@ -14,6 +14,10 @@ package academy.devonline.java.basic.section01_setup;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/**
+ * @author devonline
+ * @link http://devonline.academy/java-basic
+ */
 public class ILoveJava {
     public static void main(String[] args) {
         System.out.println("I Love Java");

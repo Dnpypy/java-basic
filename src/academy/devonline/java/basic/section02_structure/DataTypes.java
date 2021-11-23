@@ -14,6 +14,10 @@ package academy.devonline.java.basic.section02_structure;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/**
+ * @author devonline
+ * @link http://devonline.academy/java-basic
+ */
 public class DataTypes {
     public static void main(String[] args) {
         // примитивный тип данных

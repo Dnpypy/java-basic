@@ -15,7 +15,10 @@ package academy.devonline.java.basic.section02_structure;
  * limitations under the License.
  */
 import java.util.Scanner;
-
+/**
+ * @author devonline
+ * @link http://devonline.academy/java-basic
+ */
 public class StructureOfAnyConsoleProgramm {
     public static void main(String[] args) {
 
