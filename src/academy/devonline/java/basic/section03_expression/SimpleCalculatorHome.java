@@ -1,4 +1,4 @@
-package academy.devonline.java.basic.sections03_expression;
+package academy.devonline.java.basic.section03_expression;
 /*
  * Copyright (c) 2019. http://devonline.academy
  *

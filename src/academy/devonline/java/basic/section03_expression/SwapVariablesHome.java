@@ -1,3 +1,4 @@
+package academy.devonline.java.basic.section03_expression;
 /*
  * Copyright (c) 2019. http://devonline.academy
  *
@@ -13,25 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package academy.devonline.java.basic.sections03_expression;
 
-public class OperatorPrecedence {
-    /**
-     * @author devonline
-     * @link http://devonline.academy/java-basic
-     * @link https://introcs.cs.princeton.edu/java/11precedence/
-     */
+/**
+ * @author Dnpypy
+ * @link http://devonline.academy/java-basic
+ */
+import java.util.Scanner;
+
+public class SwapVariablesHome {
     public static void main(String[] args) {
-        var a = 4;
-        var b = 2 + -4 * 5 - a++ / 4 + --a;
+        Scanner sc = new Scanner(System.in);
 
-        a = 4;
-        var c = 2 + ((-4) * 5) - ((a++) / 4) + (--a);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int temp = 0;
 
+        temp = a;
+        a = b;
+        b = temp;
+        System.out.println(a);
         System.out.println(b);
-        System.out.println(c);
-
-        System.out.println("Hello " + (1 + 1));
-        System.out.println((1 + 1) + " Hello");
     }
 }

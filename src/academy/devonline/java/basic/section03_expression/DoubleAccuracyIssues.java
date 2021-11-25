@@ -1,4 +1,4 @@
-package academy.devonline.java.basic.sections03_expression;
+package academy.devonline.java.basic.section03_expression;
 /*
  * Copyright (c) 2019. http://devonline.academy
  *
@@ -14,25 +14,30 @@ package academy.devonline.java.basic.sections03_expression;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
- * @author Dnpypy
+ * @author devonline
  * @link http://devonline.academy/java-basic
  */
-import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
-public class SwapVariablesHome {
+public class DoubleAccuracyIssues {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int temp = 0;
-
-        temp = a;
-        a = b;
-        b = temp;
-        System.out.println(a);
-        System.out.println(b);
+        {
+            var a = 2;
+            var b = 1.1;
+            var c = a - b;
+            System.out.println(c);
+        }
+        {
+            BigDecimal a = new BigDecimal("2");
+            BigDecimal b = new BigDecimal("1.1");
+            BigDecimal c = a.subtract(b);
+            System.out.println(c);
+        }
+        {
+            System.out.println(22. / 7.);
+            System.out.println(new BigDecimal("22").setScale(20).divide(new BigDecimal("7"), RoundingMode.HALF_UP));
+        }
     }
 }

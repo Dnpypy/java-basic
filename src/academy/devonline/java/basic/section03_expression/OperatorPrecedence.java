@@ -1,4 +1,3 @@
-package academy.devonline.java.basic.sections03_expression;
 /*
  * Copyright (c) 2019. http://devonline.academy
  *
@@ -14,33 +13,25 @@ package academy.devonline.java.basic.sections03_expression;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/**
- * @author devonline
- * @link http://devonline.academy/java-basic
- */
-public class Literals {
-    public static void main(String[] args) {
-        // int
-        var i = 1234;
-        // double
-        var d1 = 1.;
-        var d2 = 1.0;
-        var d3 = 1.123456;
-        var d4 = 5e3;// 5 * 10 ^ 3 == 5000.0
-        // boolean
-        var b1 = true;
-        var b2 = false;
-        // char
-        var ch1 = 'a';
-        var ch2 = '\t';
-        var ch3 = '\n';
-        // String
-        var s1 = "a";
-        var s2 = "Hello world";
+package academy.devonline.java.basic.section03_expression;
 
-        //
-        int num = 1;
-        char ch = '1';
-        String s = "1";
+public class OperatorPrecedence {
+    /**
+     * @author devonline
+     * @link http://devonline.academy/java-basic
+     * @link https://introcs.cs.princeton.edu/java/11precedence/
+     */
+    public static void main(String[] args) {
+        var a = 4;
+        var b = 2 + -4 * 5 - a++ / 4 + --a;
+
+        a = 4;
+        var c = 2 + ((-4) * 5) - ((a++) / 4) + (--a);
+
+        System.out.println(b);
+        System.out.println(c);
+
+        System.out.println("Hello " + (1 + 1));
+        System.out.println((1 + 1) + " Hello");
     }
 }

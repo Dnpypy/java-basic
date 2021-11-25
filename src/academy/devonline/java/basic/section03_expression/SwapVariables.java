@@ -1,4 +1,4 @@
-package academy.devonline.java.basic.sections03_expression;
+package academy.devonline.java.basic.section03_expression;
 /*
  * Copyright (c) 2019. http://devonline.academy
  *
@@ -14,29 +14,22 @@ package academy.devonline.java.basic.sections03_expression;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /**
- * @author devonline
+ * @author Dnpypy
  * @link http://devonline.academy/java-basic
  */
-public class RelationalExpressions {
+public class SwapVariables {
     public static void main(String[] args) {
         var a = 2;
         var b = 5;
 
-        System.out.println(a == b);
-        System.out.println(a != b);
-        System.out.println(a > b);
-        System.out.println(a >= b);
-        System.out.println(a < b);
-        System.out.println(a <= b);
+        var temp = a;
+        a = b;
+        b = temp;
 
-        System.out.println(a >= 8);
-        System.out.println(a == 9);
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
 
-        var c1 = a == b;
-        boolean c2 = a == b;
-
-        System.out.println(c1);
-        System.out.println(c2);
     }
 }

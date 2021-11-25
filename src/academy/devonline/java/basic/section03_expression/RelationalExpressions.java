@@ -1,4 +1,4 @@
-package academy.devonline.java.basic.sections03_expression;
+package academy.devonline.java.basic.section03_expression;
 /*
  * Copyright (c) 2019. http://devonline.academy
  *
@@ -14,29 +14,29 @@ package academy.devonline.java.basic.sections03_expression;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
- * @author Dnpypy
+ * @author devonline
  * @link http://devonline.academy/java-basic
  */
-public class PrefixPostfixVersions {
+public class RelationalExpressions {
     public static void main(String[] args) {
-        var a = 0;
-        ++a;
-        a++;
-        System.out.println(a);
+        var a = 2;
+        var b = 5;
 
-        var b = a++;
-        //var b = a;
-        //a = a + 1;
-        System.out.println(b);
-        System.out.println(a);
+        System.out.println(a == b);
+        System.out.println(a != b);
+        System.out.println(a > b);
+        System.out.println(a >= b);
+        System.out.println(a < b);
+        System.out.println(a <= b);
 
-        var c = ++a;
-//        a = a + 1;
-//        var c = a;
-        //System.out.println(b);
-        System.out.println(c);
-        System.out.println(a);
+        System.out.println(a >= 8);
+        System.out.println(a == 9);
+
+        var c1 = a == b;
+        boolean c2 = a == b;
+
+        System.out.println(c1);
+        System.out.println(c2);
     }
 }
