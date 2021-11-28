@@ -16,7 +16,6 @@
 
 package academy.devonline.java.basic.section04_conditional;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -54,7 +53,7 @@ public class UniversalWeekDay {
 
     }
 
-    public static void ShiftToRight(String a[], int n) {
+    public static void ShiftToRight(String[] a, int n) {
         String temp = a[n];
         System.arraycopy(a, 0, a, 1, n);
         a[0] = temp;
