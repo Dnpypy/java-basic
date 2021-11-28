@@ -31,10 +31,10 @@ public class GuessTheNumber {
         // read source data
         var number = new Random().nextInt(10);
         var numUser = new Scanner(System.in).nextInt();
-
-        // processing
         String win = "Congratulations, you guessed the number!";
         String lose = "Sorry, but your number is invalid! Try again later...";
+
+        // processing
         String result = number == numUser ? win : lose;
         System.out.println(number);
 
