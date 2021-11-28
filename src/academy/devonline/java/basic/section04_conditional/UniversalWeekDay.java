@@ -16,10 +16,12 @@
 
 package academy.devonline.java.basic.section04_conditional;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  * "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+ *
  * @author Dnpypy
  * @link http://devonline.academy/java-basic
  */
@@ -29,31 +31,36 @@ public class UniversalWeekDay {
         // read source data
         Scanner sc = new Scanner(System.in);
         var isMondayFirst = sc.nextBoolean();
-        var day = sc.next().charAt(0);
+        var day = sc.nextInt();
+        String result = null;
 
         // processing
-        String result;
+        String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+
         if (!isMondayFirst) {
-            if (day == '1') { result = "Sunday"; }
-            else if (day == '2') { result = "monday"; }
-            else if (day == '3') { result = "Tuesday"; }
-            else if (day == '4') { result = "Wednesday"; }
-            else if (day == '5') { result = "Thursday"; }
-            else if (day == '6') { result = "Friday"; }
-            else if (day == '7') { result = "Saturday"; }
-            else { result = null; }
-        } else {
-            if (day == '1') { result = "monday"; }
-            else if (day == '2') { result = "Tuesday"; }
-            else if (day == '3') { result = "Wednesday"; }
-            else if (day == '4') { result = "Thursday"; }
-            else if (day == '5') { result = "Friday"; }
-            else if (day == '6') { result = "Saturday"; }
-            else if (day == '7') { result = "Sunday"; }
-            else { result = null; }
+            //System.out.println("Array " + Arrays.toString(days));
+            int n = 6;
+            ShiftToRight(days, n);
+        }
+
+        for (int i = 0; i < days.length; i++) {
+            if (day == i + 1) {
+                result = days[i];
+            }
         }
 
         // display results
         System.out.println(result);
+
+    }
+
+    public static void ShiftToRight(String a[], int n) {
+        String temp = a[n];
+        System.arraycopy(a, 0, a, 1, n);
+        a[0] = temp;
+        //System.out.println("Array after shifting to right by one : " + Arrays.toString(a));
     }
 }
+
+
+
