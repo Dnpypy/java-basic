@@ -21,7 +21,7 @@ import java.util.Scanner;
 
 /**
  * данный код запишет случайное число в диапазоне 0..9 в переменную number
- * c
+ * var number = new Random().nextInt(10);
  * @author Dnpypy
  * @link http://devonline.academy/java-basic
  */
