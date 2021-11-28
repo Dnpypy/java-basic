@@ -33,12 +33,10 @@ public class GuessTheNumber {
         var numUser = new Scanner(System.in).nextInt();
 
         // processing
-        String result;
-        if (number == numUser) {
-            result = "Congratulations, you guessed the number!";
-        } else {
-            result = "Sorry, but your number is invalid! Try again later...";
-        }
+        String win = "Congratulations, you guessed the number!";
+        String lose = "Sorry, but your number is invalid! Try again later...";
+        String result = number == numUser ? win : lose;
+        System.out.println(number);
 
         // display results
         System.out.println(result);
