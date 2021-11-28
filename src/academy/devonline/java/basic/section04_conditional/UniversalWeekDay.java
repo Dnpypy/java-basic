@@ -56,7 +56,7 @@ public class UniversalWeekDay {
 
     }
 
-    public static void ShiftToRight(String a[], int n) {
+    public static void ShiftToRight(String[] a, int n) {
         String temp = a[n];
         for (int f = n; f > 0; f--) {
             a[f] = a[f - 1];
