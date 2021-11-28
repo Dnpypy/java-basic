@@ -16,6 +16,7 @@
 
 package academy.devonline.java.basic.section04_conditional;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -37,8 +38,9 @@ public class UniversalWeekDay {
         String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
         if (!isMondayFirst) {
-            //System.out.println("Array " + Arrays.toString(days));
+            System.out.println("Array " + Arrays.toString(days));
             int n = 6;
+            System.out.println(n);
             ShiftToRight(days, n);
         }
 
@@ -47,17 +49,20 @@ public class UniversalWeekDay {
                 result = days[i];
             }
         }
+        System.out.println(Arrays.toString(days));
 
         // display results
         System.out.println(result);
 
     }
 
-    public static void ShiftToRight(String[] a, int n) {
+    public static void ShiftToRight(String a[], int n) {
         String temp = a[n];
-        System.arraycopy(a, 0, a, 1, n);
+        for (int f = n; f > 0; f--) {
+            a[f] = a[f - 1];
+        }
         a[0] = temp;
-        //System.out.println("Array after shifting to right by one : " + Arrays.toString(a));
+        System.out.println("Array after shifting to right by one : " + Arrays.toString(a));
     }
 }
 
