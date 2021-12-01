@@ -17,14 +17,25 @@
 package academy.devonline.java.basic.section05_cycles;
 
 /**
- * @author devonline
+ * Реализовать программу DisplayNumbersFrom100To1,
+ * которая выводит на консоль все целые числа от 100 до 1 (включительно).
+ *
+ * @author Dnpypy
  * @link http://devonline.academy/java-basic
  */
-public class LoopWithProblem {
+public class DisplayNumbersFrom1To100UsingTableFormat {
     public static void main(String[] args) {
-        for (var i = 0; i < 5; i++) {
-           // i--;
+        // read source data
+        var from = 1;
+        var to = 100;
+        var step = 1;
+
+        // display results
+        for (int i = from; i <= to; i += step) {
+            System.out.print(i + "\t");
+            var cols = 10;
+            System.out.print(i % cols == 0 ? "\n" : "");
         }
-        System.out.println("End");
+        System.out.println();
     }
 }
