@@ -25,6 +25,7 @@ package academy.devonline.java.basic.section05_cycles;
  */
 
 public class WhileDisplayEvenNumbersFrom0To50 {
+
     public static void main(String[] args) {
         int i = 0;
         while (i <= 50) {
