@@ -42,7 +42,7 @@ public class GuessTheNumber {
         String lose = "Sorry, but your number is invalid! Try again later...";
         String result = null;
         boolean flag = true;
-
+        System.out.println(number);
         // processing
         while (flag) {
             var numUser = new Scanner(System.in).nextInt();
