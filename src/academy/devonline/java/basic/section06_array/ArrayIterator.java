@@ -20,14 +20,22 @@ package academy.devonline.java.basic.section06_array;
  * @author devonline
  * @link http://devonline.academy/java-basic
  */
-public class WhatIsArray {
+public class ArrayIterator {
     public static void main(String[] args) {
-        int a = 1;
-        int b = 2;
-        int c = 3;
-        int d = 4;
-        int e = 5;
-
         int[] array = {1, 2, 3, 4, 5};
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        for (int i: array) {
+            System.out.print(i + " ");
+        }
     }
 }
