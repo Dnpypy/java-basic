@@ -23,7 +23,7 @@ import java.util.Scanner;
  * @link http://devonline.academy/java-basic
  */
 
-public class LinearSearch {
+public class LinearSearchHome {
     public static void main(String[] args) {
 
         // read source data
