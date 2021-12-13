@@ -46,8 +46,8 @@ import java.util.Arrays;
  */
 public class ArrayCopyRangeHome {
 
-    static int[] array;
-    static int[] temp;
+    private static int[] array;
+    private static int[] temp;
     private static int size = 0;
     //static int[] newArray;
 
@@ -58,7 +58,10 @@ public class ArrayCopyRangeHome {
         int endIndex = 4;
 
         // processing
-        arrayTempCopy(startIndex, endIndex, arrayNum);
+        // size array
+        array = new int[arrayTempCopy(startIndex, endIndex, arrayNum)];
+
+        // array with zero
         array = arrayNewCreate();
 
         //display result
@@ -66,32 +69,31 @@ public class ArrayCopyRangeHome {
     }
 
     /**
-     *
      * @param start index
      * @param end   index
-     * @param arr current array
-     * the method takes the initial and final index values,
-     * fills in the temporary array, and calculates the size of the array without zeros
+     * @param arr   current array
+     *              the method takes the initial and final index values,
+     *              fills in the temporary array, and calculates the size of the array without zeros
      */
-    public static void arrayTempCopy(int start, int end, int[] arr) {
+    public static int arrayTempCopy(int start, int end, int[] arr) {
         size = 0;
-        int[] temp = new int[arr.length];
+        temp = new int[arr.length];
         for (int i = start; i < end; i++) {
             temp[i] = arr[i];
             if (temp[i] != 0)
                 size++;
         }
-       // System.out.println(temp.length); 5
-        //System.out.println(Arrays.toString(temp));  [0, 0, 78, 444, 0]
+        return size;
     }
 
     public static int[] arrayNewCreate() {
         int[] temp2 = new int[size];
         var j = 0;
         for (int i = 0; i < temp.length; i++) {
-            temp2[j]=temp[i];
-            j++;
-
+            if(temp[i] != 0) {
+                temp2[j] = temp[i];
+                j++;
+            }
         }
         return temp2;
     }
