@@ -29,8 +29,8 @@ public class LinearSearchHome {
         // read source data
         int[] array1 = {11, 21, 31, 41, 51};
         //int[] array2 = new int[0];
-        String no = "item not found";
-        String yes = "item found: ";
+        String no = "-1"; //"index not found";
+        String yes = "index found: ";
         boolean flag = true;
 
         // processing
@@ -45,7 +45,7 @@ public class LinearSearchHome {
                 if (lineanSearch(array1, num) == -1) {
                     System.out.println(no);
                 } else {
-                    System.out.println(yes + (lineanSearch(array1, num) + 1));
+                    System.out.println(yes + (lineanSearch(array1, num)));
                     flag = false;
                 }
             }
