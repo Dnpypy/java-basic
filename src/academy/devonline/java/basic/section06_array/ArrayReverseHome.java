@@ -37,16 +37,19 @@ public class ArrayReverseHome {
     public static void main(String[] args) {
 
         // read source data
-        int[] reverseArray = {1, 2, 3, 4, 5};
+        int[] reverseArray = {1, 2, 3, 4, 5, 6};
+        //display results
+        System.out.println(Arrays.toString(reverseArray));
 
         //processing
-        for (int i = 0; i < reverseArray.length; i++) {
+        for (int i = 0; i < reverseArray.length / 2; i++) {
+
             var temp = reverseArray[reverseArray.length - 1 - i];
             reverseArray[reverseArray.length - 1 - i] = reverseArray[i];
             reverseArray[i] = temp;
-            if (reverseArray[i] == reverseArray[reverseArray.length - 1 - i]) {
-                break;
-            }
+//            if (reverseArray[i] == reverseArray[reverseArray.length - 1 - i]) {
+//                break;
+//            }
         }
 
         //display results
