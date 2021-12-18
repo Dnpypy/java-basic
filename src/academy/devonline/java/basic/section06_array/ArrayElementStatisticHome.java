@@ -15,8 +15,10 @@
  */
 package academy.devonline.java.basic.section06_array;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Dnpypy
@@ -41,42 +43,29 @@ import java.util.HashMap;
  */
 public class ArrayElementStatisticHome {
     public static void main(String[] args) {
-
-        // read source data
-        int[] array = {5, 2, 3, 4, 4, 3, 3, 2, 2, 2, 2, 2};
-        int[] emptyArray1 = {};
-        HashMap<Integer, Integer> copyNumbers = new HashMap<>();
-
-        var numbers = array.length;
-        /*Чтобы посчитать сколько процентов будет, нужно нужное количество разделить на общее количество чего-то.
-                И умножить на 100. Например: 15 человек из 30, делим 15 на общее количество (30).*/
-        var count = 0;
-        //var num = array[0];
-        copyNumbers.put(array[0], 0);
-        //System.out.println(copyNumbers);
+        //read source date
+        int[] nums = {1, 2, 3, 2, 2, 2, 3, 3, 4, 4, 4};
+        var size = nums.length;
+        var hundred = 100;
+        Map<Integer, Integer> keyNums = new HashMap<>();
+        DecimalFormat df = new DecimalFormat("#.##");
 
         //processing
-        for (int i = 0; i < array.length; i++) {
-
-            for (String key : copyNumbers.keySet()) {
-                if (key == array[i]) {
-                    count++;
-                } else {
-
-                }
-            }
-
+        /*
+         * метод getOrDefault - значение по умолчанию
+         * если с таким ключем нет значения, то + 1
+         **/
+        for (int x : nums) {
+            int newValue = keyNums.getOrDefault(x, 0) + 1;
+            keyNums.put(x, newValue);
         }
-//        for (int i = 0; i < array.length; i++) {
-//            int finalI = i;
-//            copyNumbers.put(array[i], 0);
-//            copyNumbers.forEach((key, value) -> {
-//                if (key.equals(array[finalI])) {
-//                    copyNumbers.put(key, value + 1);
-//                }
-//            });
-//        }
-//        System.out.println(copyNumbers);
 
+        //display results
+        System.out.println(size);
+        System.out.println(keyNums);
+
+        for (Map.Entry<Integer, Integer> pair: keyNums.entrySet()) {
+            System.out.println(pair.getKey() + " " + df.format(((double) pair.getValue() * hundred / size)) + " %");
+        }
     }
 }
