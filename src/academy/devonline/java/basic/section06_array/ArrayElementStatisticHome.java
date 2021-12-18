@@ -44,7 +44,8 @@ import java.util.Map;
 public class ArrayElementStatisticHome {
     public static void main(String[] args) {
         //read source date
-        int[] nums = {1, 2, 3, 2, 2, 2, 3, 3, 4, 4, 4};
+        //int[] nums = {1, 2, 3, 2, 2, 2, 3, 3, 4, 4, 4};
+        int[] nums = {5, 2, 3, 4, 4, 3, 3, 2, 2, 2, 2, 2};
         var size = nums.length;
         var hundred = 100;
         Map<Integer, Integer> keyNums = new HashMap<>();
@@ -53,7 +54,7 @@ public class ArrayElementStatisticHome {
         //processing
         /*
          * метод getOrDefault - значение по умолчанию
-         * если с таким ключем нет значения, то + 1
+         * если с таким ключем нет значения 0, иначеы + 1
          **/
         for (int x : nums) {
             int newValue = keyNums.getOrDefault(x, 0) + 1;
