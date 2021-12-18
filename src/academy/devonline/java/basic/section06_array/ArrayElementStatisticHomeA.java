@@ -16,7 +16,6 @@
 package academy.devonline.java.basic.section06_array;
 
 import java.text.DecimalFormat;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,7 +40,7 @@ import java.util.Map;
  * <p>
  * По такому же принципу необходимо определить проценты вхождения всех остальных чисел в массиве!
  */
-public class ArrayElementStatisticHome {
+public class ArrayElementStatisticHomeA {
     public static void main(String[] args) {
         //read source date
         //int[] nums = {1, 2, 3, 2, 2, 2, 3, 3, 4, 4, 4};
@@ -53,7 +52,7 @@ public class ArrayElementStatisticHome {
 
         //processing
         /*
-         * метод getOrDefault - значение по умолчанию
+         * метод getOrDefault класса HashMap - значение по умолчанию
          * если с таким ключем нет значения 0, иначеы + 1
          **/
         for (int x : nums) {
@@ -62,10 +61,10 @@ public class ArrayElementStatisticHome {
         }
 
         //display results
-        System.out.println(size);
-        System.out.println(keyNums);
+        //System.out.println(size);
+        //System.out.println(keyNums);
 
-        for (Map.Entry<Integer, Integer> pair: keyNums.entrySet()) {
+        for (Map.Entry<Integer, Integer> pair : keyNums.entrySet()) {
             System.out.println(pair.getKey() + " " + df.format(((double) pair.getValue() * hundred / size)) + " %");
         }
     }
