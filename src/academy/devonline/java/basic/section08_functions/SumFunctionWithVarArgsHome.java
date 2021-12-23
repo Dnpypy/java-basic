@@ -28,6 +28,7 @@ public class SumFunctionWithVarArgsHome {
         System.out.println(sumOf());
         System.out.println(sumOf(1));
         System.out.println(sumOf(1, 2));
+        System.out.println(sumOf(1, 2, 100, 1000));
     }
 
     private static int sumOf(int...args) {
