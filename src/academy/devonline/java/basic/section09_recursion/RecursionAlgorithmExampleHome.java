@@ -20,7 +20,7 @@ package academy.devonline.java.basic.section09_recursion;
  * @author devonline
  * @link http://devonline.academy/java-basic
  */
-public class RecursionAlgorithmExample {
+public class RecursionAlgorithmExampleHome {
     public static void main(String[] args) {
         printNumbersFrom1To10();
         printNumbersFromAndTo10(1);
@@ -46,11 +46,6 @@ public class RecursionAlgorithmExample {
     }
 
     private static void printNumbersFromAndTo10(int i) {
-        if (i > 10) {
-            System.out.println();
-        } else{
-            System.out.print(i + "\t");
-            printNumbersFromAndTo10(i + 1);
-        }
+        //...
     }
 }

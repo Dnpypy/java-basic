@@ -17,40 +17,32 @@
 package academy.devonline.java.basic.section09_recursion;
 
 /**
- * @author devonline
+ * @author Dnpypy
  * @link http://devonline.academy/java-basic
  */
-public class RecursionAlgorithmExample {
+public class SumFrom1To100UsingRecursion {
     public static void main(String[] args) {
-        printNumbersFrom1To10();
-        printNumbersFromAndTo10(1);
+        System.out.println(sumOf(1, 0));
+        System.out.println(sumOf(10));
     }
 
-    /*private static void printNumbersFrom1To10() {
-        for (int i = 1; i <= 10; i++) {
-            System.out.print(i + "\t");
-        }
-        System.out.println();
-    }*/
-
-    private static void printNumbersFrom1To10() {
-        int i = 1;
-        while (true) {
-            if (i > 10) {
-                System.out.println();
-                break;
-            }
-            System.out.print(i + "\t");
-            i++;
+    private static int sumOf(int current, int sum) {
+        if (current > 10) {
+            return sum;
+        } else {
+            var newSum = sum + current;
+            return sumOf(current + 1, sum + current);
         }
     }
 
-    private static void printNumbersFromAndTo10(int i) {
-        if (i > 10) {
-            System.out.println();
-        } else{
-            System.out.print(i + "\t");
-            printNumbersFromAndTo10(i + 1);
+    private static int sumOf(int value) {
+        if (value == 0) {
+            return value;
+        } else {
+            var prevSum = sumOf(value - 1);
+            return value + prevSum;
         }
     }
+
+
 }

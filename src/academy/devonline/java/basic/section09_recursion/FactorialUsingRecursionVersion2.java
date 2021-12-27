@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2019. http://devonline.academy
  *
@@ -20,37 +21,27 @@ package academy.devonline.java.basic.section09_recursion;
  * @author devonline
  * @link http://devonline.academy/java-basic
  */
-public class RecursionAlgorithmExample {
+public class FactorialUsingRecursionVersion2 {
     public static void main(String[] args) {
-        printNumbersFrom1To10();
-        printNumbersFromAndTo10(1);
+        System.out.println(factorial(5));
+        System.out.println(factorial2(1, 10, 1));
     }
 
-    /*private static void printNumbersFrom1To10() {
-        for (int i = 1; i <= 10; i++) {
-            System.out.print(i + "\t");
-        }
-        System.out.println();
-    }*/
-
-    private static void printNumbersFrom1To10() {
-        int i = 1;
-        while (true) {
-            if (i > 10) {
-                System.out.println();
-                break;
-            }
-            System.out.print(i + "\t");
-            i++;
+    private static int factorial2(int from, int to, int result) {
+        if (from > to) {
+            return result;
+        } else {
+            return factorial2(from + 1, to, result * from);
         }
     }
 
-    private static void printNumbersFromAndTo10(int i) {
-        if (i > 10) {
-            System.out.println();
-        } else{
-            System.out.print(i + "\t");
-            printNumbersFromAndTo10(i + 1);
+    private static int factorial(int value) {
+        if (value == 0 || value == 1) {
+            return 1;
+        } else {
+            return value * factorial(value - 1);
         }
     }
+
+
 }
