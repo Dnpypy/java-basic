@@ -20,27 +20,38 @@ package academy.devonline.java.basic.section09_recursion;
  * @author Dnpypy
  * @link http://devonline.academy/java-basic
  */
-public class SumFrom1To100UsingRecursionHome {
+public class FindMinElementUsingRecursionHome {
+
+
     public static void main(String[] args) {
-        System.out.println(sumOf(1, 0));
-        System.out.println(sumOf(10));
+        int[] array = {1, -2, -8, 0, 5};
+        //int[] array = {1, -2, 8, 0, -5};
+
+        System.out.println(findMin(array));
+        System.out.println(findMin(array, 1, array[0]));
     }
 
-    private static int sumOf(int current, int sum) {
-        ///....
-        if (current > 10) {
-            return sum;
-        } else {
-            return sumOf(current + 1, sum + current);
+    // Iterative
+    private static int findMin(int[] array) {
+        var min = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
         }
+        return min;
     }
 
-    private static int sumOf(int value) {
-        ///....
-        if (value == 0) {
-            return value;
+    //Recursive
+    private static int findMin(int[] array, int i, int min) {
+        if (i == array.length) {
+            return min;
         } else {
-            return value + sumOf(value - 1);
+            if (array[i] < min) {
+                return findMin(array, i + 1, array[i]);
+            } else {
+                return findMin(array, i + 1, min);
+            }
         }
     }
 }

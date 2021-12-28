@@ -24,14 +24,18 @@ package academy.devonline.java.basic.section09_recursion;
 public class FactorialUsingRecursionVersion2 {
     public static void main(String[] args) {
         System.out.println(factorial(5));
-        System.out.println(factorial2(1, 10, 1));
+        System.out.println(factorial2(5));
     }
 
-    private static int factorial2(int from, int to, int result) {
+    private static int factorial2(int value) {
+        return factorial(1, value, 1);
+    }
+
+    private static int factorial(int from, int to, int result) {
         if (from > to) {
             return result;
         } else {
-            return factorial2(from + 1, to, result * from);
+            return factorial(from + 1, to, result * from);
         }
     }
 

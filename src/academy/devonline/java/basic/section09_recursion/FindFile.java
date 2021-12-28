@@ -16,31 +16,30 @@
 
 package academy.devonline.java.basic.section09_recursion;
 
+import java.io.File;
+
 /**
- * @author Dnpypy
+ * @author devonline
  * @link http://devonline.academy/java-basic
  */
-public class SumFrom1To100UsingRecursionHome {
+public class FindFile {
     public static void main(String[] args) {
-        System.out.println(sumOf(1, 0));
-        System.out.println(sumOf(10));
+        //String dir = "C:\\Users\\devonline\\IdeaProjects\\java-basic";
+        String dir = "D:\\Games\\SteamLibrary";
+        String query = "steam.dll";
+        //path:   D:\Games\SteamLibrary    file: steam.dll  work!
+        findFile(new File(dir), query);
     }
 
-    private static int sumOf(int current, int sum) {
-        ///....
-        if (current > 10) {
-            return sum;
-        } else {
-            return sumOf(current + 1, sum + current);
-        }
-    }
-
-    private static int sumOf(int value) {
-        ///....
-        if (value == 0) {
-            return value;
-        } else {
-            return value + sumOf(value - 1);
+    private static void findFile(File dir, String fileName) {
+        for (File file : dir.listFiles()) {
+            if (file.isDirectory()) {
+                findFile(file, fileName);
+            } else if (file.isFile()) {
+                if (fileName.equals(file.getName())) {
+                    System.out.println(file.getAbsolutePath());
+                }
+            }
         }
     }
 }

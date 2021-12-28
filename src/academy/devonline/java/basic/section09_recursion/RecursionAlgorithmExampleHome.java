@@ -46,6 +46,11 @@ public class RecursionAlgorithmExampleHome {
     }
 
     private static void printNumbersFromAndTo10(int i) {
-        //...
+        if (i > 10) {
+            System.out.println();
+        }else{
+            System.out.print(i + "\t");
+            printNumbersFromAndTo10(i + 1);
+        }
     }
 }

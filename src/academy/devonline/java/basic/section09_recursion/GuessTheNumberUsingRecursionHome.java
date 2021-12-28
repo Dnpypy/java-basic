@@ -20,6 +20,7 @@ package academy.devonline.java.basic.section09_recursion;
  * @author Dnpypy
  * @link http://devonline.academy/java-basic
  */
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -29,6 +30,9 @@ public class GuessTheNumberUsingRecursionHome {
         numberUsingIteractive(number);
         numberUsingRecursive(number);
         //code
+    }
+
+    private static void numberUsingIteractive(int num) {
         while (true) {
             // read source data
             var userCase = new Scanner(System.in).nextInt();
@@ -48,11 +52,24 @@ public class GuessTheNumberUsingRecursionHome {
         }
     }
 
-    private static void numberUsingIteractive(int num){
-        ///....
-    }
-
     private static void numberUsingRecursive(int num) {
-        //....
+        // read source data
+        var userCase = new Scanner(System.in).nextInt();
+
+        // processing
+        if (num > userCase) {
+            // display results
+            numberUsingRecursive(num);
+            System.out.println("num > " + userCase + ". Try again:");
+
+        } else if (num < userCase) {
+            // display results
+            numberUsingRecursive(num);
+            System.out.println("num < " + userCase + ". Try again:");
+
+        } else {
+            // display results
+            System.out.println("Congratulations, you guessed the num!");
+        }
     }
 }
