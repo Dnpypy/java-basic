@@ -37,43 +37,40 @@ public class ExtractPositiveIntNumbersFromStringHome {
     // 22222222
     // 2,2,2,2
     private static int[] extractNumbersFromString(final String string) {
-        //int[] results = new int[string.length() / 2 + 1];
-        int[] results = new int[string.length() / 2 + 1];
-        var count = 0;  // хранит сколько чисел извлекли
+        // инициализация массива, счетчика, стрингбилдер
         //...
         //на вход вся строка, проверяем всю строку по символьно
         //"Hello 1234 from 23, or java - is not java11!-2.3 is not a 24"
         //string.length() - 60 символов
-        System.out.println(string.length());
-        StringBuilder nameBuilder = new StringBuilder();
-        for (int i = 0; i < string.length(); i++) {
-            var ch = string.charAt(i);
-            if (isDigit(ch)) { // если число добавляю в builder
-                nameBuilder.append(ch);
-            } else if (nameBuilder.length() > 0) {// если numberBuilder не пустой
-                results[count++] = Integer.parseInt(nameBuilder.toString());
+
+        //итерация цикла фор
+        //..
+            //инициализация переменной чар первый символ
+        //..
+            //условие иф
+        //..
+        //..
+                //иначе
+        //..// если numberBuilder не пустой
+        //..
                 //... // обнуление numberBuilder
-                nameBuilder.setLength(0);
+        //..
             }
         }
         //если в конце строки осталось число, то еще раз проверить numberBuilder
-        if ( nameBuilder.length() > 0){// если numberBuilder не пустой
-            results[count++] = Integer.parseInt(nameBuilder.toString());
+//..
+//..
             // обнуление уже не нужно
         }
         return trimArray(results, count);
     }
 
     private static boolean isDigit(char ch) {
-        return Character.isDigit(ch);
+        //..
     }
 
     private static int[] trimArray(int[] array, int count) {
-        int[] temp = new int[count];
-        for (int i = 0; i < count; i++) {
-            temp[i] = array[i];
-        }
-        return temp;
+        //..
     }
 }
 

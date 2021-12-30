@@ -47,37 +47,29 @@ public class SimplestTextArchiverHome {
 
     private static String zip(String source) {
         // Your implementation must be here
-        StringBuilder sb = new StringBuilder();
-        char prev = source.charAt(0);  //
-        var count = 1;
+        // инициализация стрингбилдера, предыдущий символ, счетчик
+        //..
         //processing сравнение символа текущего с первым взятым из строки
-        for (int i = 1; i < source.length(); i++) {
-            var current = source.charAt(i);
-            if (prev == current) {
-                count++;
-            } else {
-                // запись в стрингбилдер друг за другом
-                sb.append(prev).append(count);
+        // итерация цикл фор и инициализация текущего символа
+        //..
+            // если равны символы то счетчик ++
+        //..
+                // иначе запись в стрингбилдер друг за другом
+        //..
                 // тут все меняется предыдущий становится текущим, счетчик опять 1
-                prev = current;
-                count = 1;
+        //..//..
             }
         }
-        sb.append(prev).append(count);
-        return sb.toString();
+//..еще раз запись в сб
+//.. возврат в ту стринг
     }
 
     private static String unzip(String zipped) {
         // Your implementation must be here
-        StringBuilder sbUnzip = new StringBuilder();
-        for (int i = 0; i < zipped.length(); i+=2) {
-            var ch = zipped.charAt(i);
+        //..//..//..
             //символ преобразуем -> в строку далее -> в число
-            int count = Integer.parseInt(String.valueOf(zipped.charAt(i + 1)));
-            for (int j = 0; j < count; j++) {
-                sbUnzip.append(ch);
-            }
-        }
-        return sbUnzip.toString();
+        //..
+        //..
+        //.. возврат в ту стринг
     }
 }
