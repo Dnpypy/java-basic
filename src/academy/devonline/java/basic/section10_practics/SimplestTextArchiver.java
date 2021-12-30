@@ -16,19 +16,11 @@
 
 package academy.devonline.java.basic.section10_practics;
 
-import java.text.DecimalFormat;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-import static java.lang.Character.isDigit;
-
 /**
- * @author Dnpypy
+ * @author devonline
  * @link http://devonline.academy/java-basic
  */
-public class SimplestTextArchiverHome {
-
+public class SimplestTextArchiver {
     public static void main(String[] args) {
         // read source data
         String source = "A".repeat(8) + "B".repeat(3) + "C".repeat(5);
@@ -46,38 +38,33 @@ public class SimplestTextArchiverHome {
     }
 
     private static String zip(String source) {
-        // Your implementation must be here
-        StringBuilder sb = new StringBuilder();
-        char prev = source.charAt(0);  //
-        var count = 1;
-        //processing сравнение символа текущего с первым взятым из строки
+        StringBuilder result = new StringBuilder();
+        char prev = source.charAt(0);
+        int count = 1;
         for (int i = 1; i < source.length(); i++) {
             var current = source.charAt(i);
-            if (prev == current) {
+            if (current == prev) {
                 count++;
             } else {
-                // запись в стрингбилдер друг за другом
-                sb.append(prev).append(count);
-                // тут все меняется предыдущий становится текущим, счетчик опять 1
+                result.append(prev).append(count);
                 prev = current;
                 count = 1;
             }
         }
-        sb.append(prev).append(count);
-        return sb.toString();
+        result.append(prev).append(count);
+        return result.toString();
     }
 
     private static String unzip(String zipped) {
-        // Your implementation must be here
-        StringBuilder sbUnzip = new StringBuilder();
-        for (int i = 0; i < zipped.length(); i+=2) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < zipped.length(); i += 2) {
             var ch = zipped.charAt(i);
-            //символ преобразуем -> в строку далее -> в число
             int count = Integer.parseInt(String.valueOf(zipped.charAt(i + 1)));
             for (int j = 0; j < count; j++) {
-                sbUnzip.append(ch);
+                result.append(ch);
             }
         }
-        return sbUnzip.toString();
+        return result.toString();
     }
+
 }
