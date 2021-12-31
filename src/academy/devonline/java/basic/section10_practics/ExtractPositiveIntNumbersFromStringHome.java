@@ -38,39 +38,42 @@ public class ExtractPositiveIntNumbersFromStringHome {
     // 2,2,2,2
     private static int[] extractNumbersFromString(final String string) {
         // инициализация массива, счетчика, стрингбилдер
-        //...
+        int[] temp = new int[string.length() / 2 + 1];
+        var count = 0;
+        StringBuilder sb = new StringBuilder();
         //на вход вся строка, проверяем всю строку по символьно
         //"Hello 1234 from 23, or java - is not java11!-2.3 is not a 24"
         //string.length() - 60 символов
 
         //итерация цикла фор
-        //..
-            //инициализация переменной чар первый символ
-        //..
-            //условие иф
-        //..
-        //..
-                //иначе
-        //..// если numberBuilder не пустой
-        //..
-                //... // обнуление numberBuilder
-        //..
+        for (int i = 0; i < string.length(); i++) {
+            char ch = string.charAt(i);
+            if (isDigit(ch)) {
+                sb.append(ch);
+            } else if (sb.length() > 0) {
+                temp[count++] = Integer.parseInt(sb.toString());
+                sb.setLength(0);
             }
         }
-        //если в конце строки осталось число, то еще раз проверить numberBuilder
-//..
-//..
-            // обнуление уже не нужно
+        if (sb.length() > 0) {
+            temp[count++] = Integer.parseInt(sb.toString());
         }
-        return trimArray(results, count);
+
+        //если в конце строки осталось число, то еще раз проверить numberBuilder
+        // обнуление уже не нужно
+        return trimArray(temp, count);
     }
 
     private static boolean isDigit(char ch) {
-        //..
+        return Character.isDigit(ch);
     }
 
     private static int[] trimArray(int[] array, int count) {
-        //..
+        int[] temp = new int[count];
+        for (int i = 0; i < count; i++) {
+            temp[i] = array[i];
+        }
+        return temp;
     }
 }
 

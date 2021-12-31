@@ -16,13 +16,6 @@
 
 package academy.devonline.java.basic.section10_practics;
 
-import java.text.DecimalFormat;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-import static java.lang.Character.isDigit;
-
 /**
  * @author Dnpypy
  * @link http://devonline.academy/java-basic
@@ -48,28 +41,42 @@ public class SimplestTextArchiverHome {
     private static String zip(String source) {
         // Your implementation must be here
         // инициализация стрингбилдера, предыдущий символ, счетчик
-        //..
+        StringBuilder sb = new StringBuilder();
+        var prev = source.charAt(0);
+        var count = 1;
         //processing сравнение символа текущего с первым взятым из строки
         // итерация цикл фор и инициализация текущего символа
-        //..
-            // если равны символы то счетчик ++
-        //..
-                // иначе запись в стрингбилдер друг за другом
-        //..
-                // тут все меняется предыдущий становится текущим, счетчик опять 1
-        //..//..
+        for (int i = 1; i < source.length(); i++) {
+            var current = source.charAt(i);
+            if ( current == prev) {
+                count++;
+            } else {
+                sb.append(prev).append(count);
+                prev = current;
+                count = 1;
             }
+
         }
-//..еще раз запись в сб
-//.. возврат в ту стринг
+        sb.append(prev).append(count);
+        return sb.toString();
     }
+
+
+
 
     private static String unzip(String zipped) {
         // Your implementation must be here
-        //..//..//..
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < zipped.length(); i+=2) {
+            var ch = zipped.charAt(i);
             //символ преобразуем -> в строку далее -> в число
-        //..
-        //..
+            int count = Integer.parseInt(String.valueOf(zipped.charAt(i + 1)));
+            for (int j = 0; j < count; j++) {
+                sb.append(ch);
+            }
+        }
+
         //.. возврат в ту стринг
+        return sb.toString();
     }
 }
