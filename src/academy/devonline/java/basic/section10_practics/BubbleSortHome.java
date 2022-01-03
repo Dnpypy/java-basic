@@ -42,9 +42,8 @@ public class BubbleSortHome {
     }
 
     private static void bubbleSort(int[] arr) {
-        for (int i = 0; i < arr.length ; i++) {
+        for (int i = 0; i < arr.length; i++) {
             for (int j = 1 + i; j < arr.length; j++) {
-
                 var temp = arr[i];
                 if (temp > arr[j]) {
                     arr[i] = arr[j];
