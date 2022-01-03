@@ -18,39 +18,36 @@ package academy.devonline.java.basic.section10_practics;
 
 import java.util.Arrays;
 
-import static java.lang.Character.isDigit;
-
 /**
- * @author Dnpypy
+ * @author devonline
  * @link http://devonline.academy/java-basic
  */
-import java.util.Arrays;
-
-public class BubbleSortHome {
+public class BubbleSort {
     public static void main(String[] args) {
         // read source data
-        //int[] numsArray = {1, 11, 2, 33, 22, 1, 5};
-        int[] numsArray = {1, 11, 2, 3, 3, 3, 33, 22, 1, 5};
-        System.out.println(Arrays.toString(numsArray));
-
-        //processing
-        bubbleSort(numsArray);
-
-        //display results
-        System.out.println(Arrays.toString(numsArray));
-
+        int[] array = {5, 1, 4, 2, 8};
+        // processing
+        bubbleSort(array);
+        // display results
+        System.out.println(Arrays.toString(array));
     }
 
-    private static void bubbleSort(int[] arr) {
-        for (int i = 0; i < arr.length ; i++) {
-            for (int j = 1 + i; j < arr.length; j++) {
-
-                var temp = arr[i];
-                if (temp > arr[j]) {
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+    private static void bubbleSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            boolean swap = false;
+            for (int j = 0; j < array.length - 1 - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    var temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    swap = true;
                 }
+            }
+            if (!swap) {
+                break;
             }
         }
     }
+
+
 }
