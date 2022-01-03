@@ -75,6 +75,7 @@ public class SimplestTextArchiverVersion2 {
     }
 
     private static void unzipChar(StringBuilder countBuilder, StringBuilder result, char ch) {
+        System.out.println(" countBuilder.toString() " + countBuilder.toString());
         int count = Integer.parseInt(countBuilder.toString());
         for (int j = 0; j < count; j++) {
             result.append(ch);
