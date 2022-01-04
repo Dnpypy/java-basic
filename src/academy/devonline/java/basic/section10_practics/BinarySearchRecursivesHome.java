@@ -22,45 +22,43 @@ import java.util.Arrays;
  * @author Dnpypy
  * @link http://devonline.academy/java-basic
  */
-public class BinarySearchIterativeHome {
+
+public class BinarySearchRecursivesHome {
     public static void main(String[] args) {
         // read source data
-        //int[] numsArray = {1, 11, 2, 33, 22, 1, 5};
         int[] numsArray = {1, 11, 2, 3, 3, 3, 33, 22, 1, 5};
-        System.out.println(Arrays.toString(numsArray));
-        var result = 0;
-        var n = 33;
+        int result = 0;
+        int n = 0;
+        int low = 0;
+        int high = numsArray.length - 1;
+
         //processing
         bubbleSort(numsArray);
         System.out.println(Arrays.toString(numsArray));
-        result = binarySearchIterative(numsArray, n);
+        result = binarySearchRecursive(numsArray, n, low, high);
 
         // display results
         System.out.println("Index: " + result);
     }
 
-    private static int binarySearchIterative(int[] numsArray, int num) {
-        var low = 0;
-        var high = numsArray.length - 1;
-        var mid = 0;
-        var guess = 0;
+    private static int binarySearchRecursive(int[] numsArray, int num, int startIndex, int endIndex) {
 
-        while (low <= high) {
-            mid = (low + high) / 2;
-            guess = numsArray[mid];
+        if (startIndex <= endIndex) {
+            var mid = (startIndex + endIndex) / 2;
+            var guess = numsArray[mid];
 
-            if (guess == num) {
+            if (num > guess) {
+                return binarySearchRecursive(numsArray, num, mid + 1, endIndex);
+            } else if (num < guess){
+                return binarySearchRecursive(numsArray, num, mid - 1, endIndex);
+            } else {
                 return mid;
             }
-
-            if (guess > num) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
-            }
         }
+
         return -1;
     }
+
 
     private static void bubbleSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -73,4 +71,27 @@ public class BinarySearchIterativeHome {
             }
         }
     }
+//    private static int binarySearch(int[] numsArray, int num) {
+//        var low = 0;
+//        var high = numsArray.length - 1;
+//        var mid = 0;
+//        var guess = 0;
+//
+//        while (low <= high) {
+//            mid = (low + high) / 2;
+//            guess = numsArray[mid];
+//
+//            if (guess == num) {
+//                return mid;
+//            }
+//
+//            if (guess > num) {
+//                high = mid - 1;
+//            } else {
+//                low = mid + 1;
+//            }
+//        }
+//        return -1;
+//    }
+
 }
