@@ -29,12 +29,14 @@ public class BinarySearchIterativeHome {
         int[] numsArray = {1, 11, 2, 3, 3, 3, 33, 22, 1, 5};
         System.out.println(Arrays.toString(numsArray));
         var result = 0;
-
+        var n = 33;
         //processing
         bubbleSort(numsArray);
         System.out.println(Arrays.toString(numsArray));
-        result = binarySearch(numsArray, 5);
-        System.out.println(result);
+        result = binarySearch(numsArray, n);
+
+        // display results
+        System.out.println("Index: " + result);
     }
 
     private static int binarySearch(int[] numsArray, int num) {
@@ -46,7 +48,6 @@ public class BinarySearchIterativeHome {
         while (low <= high) {
             mid = (low + high) / 2;
             guess = numsArray[mid];
-            System.out.println("numsArray mid : " + guess);
 
             if (guess == num) {
                 return mid;
