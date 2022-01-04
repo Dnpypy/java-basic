@@ -50,7 +50,7 @@ public class BinarySearchRecursivesHome {
             if (num > guess) {
                 return binarySearchRecursive(numsArray, num, mid + 1, endIndex);
             } else if (num < guess){
-                return binarySearchRecursive(numsArray, num, mid - 1, endIndex);
+                return binarySearchRecursive(numsArray, num, startIndex, mid - 1);
             } else {
                 return mid;
             }
