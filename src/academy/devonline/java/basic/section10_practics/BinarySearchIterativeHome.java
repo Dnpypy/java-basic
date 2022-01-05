@@ -46,7 +46,7 @@ public class BinarySearchIterativeHome {
         var guess = 0;
 
         while (low <= high) {
-            mid = (low + high) / 2;
+            mid = (low + high) >>> 1; // тоже самое что mid = (low + high) / 2;
             guess = numsArray[mid];
 
             if (guess == num) {
