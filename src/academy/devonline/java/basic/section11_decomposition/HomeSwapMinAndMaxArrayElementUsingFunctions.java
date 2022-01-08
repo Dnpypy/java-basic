@@ -38,12 +38,31 @@ public class HomeSwapMinAndMaxArrayElementUsingFunctions {
     //найти минимальный и максимальный элемент в массивеd
     private static int[] getIndexesOfMinAndMaxElements(int[] array) {
         // индекс мин, значение мин
+        var valueMin = array[0];
+        var indexMin = 0;
         // индекс макс, значение макс
+        var valueMax = array[0];
+        var indexMax = 0;
         // цикл поиска и сравнения
+        for (int i = 1; i < array.length; i++) {
+            var current = array[i];
+            if (current > valueMax) {
+                valueMax = current;
+                indexMax = i;
+            }
+            if (current < valueMin) {
+                valueMax = current;
+                indexMin = i;
+            }
+        }
         //возврат значений
+        return new int[]{indexMax, indexMin};
     }
 
     // поменять местами элементы в массиве
     private static void swap(int[] array, int index1, int index2) {
+        var temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
     }
 }
