@@ -26,7 +26,8 @@ import java.util.Map;
 public class HomeFindPopularWord {
     public static void main(String[] args) {
         // read source data
-        String text = "hello java world java hello I Hello Java World java Hello java";
+        //String text = "hello java world java hello I Hello Java World java Hello java";
+        String text = "hello java world java hello I Hello Java World java i i i I I i i";
         Map<String, Integer> keyNums = new HashMap<>();
 
         //processing
@@ -56,14 +57,22 @@ public class HomeFindPopularWord {
 
     /**
      * @param text исходная строка текста со словами
-     * @param map  пустая карта с ключами строки-слова значения числа - сколько слова встречатся в строке раз
+     * @param map  пустая карта с ключами, где строки-слова, значения-числа - сколько слова встречатся в строке раз
      */
     private static void CountAndWordAddMap(String text, Map<String, Integer> map) {
-        var temp = text.toLowerCase().split(" ");
+        var temp = findAllWordsInText(text);
 
         for (String x : temp) {
             int newValue = map.getOrDefault(x, 0) + 1;
             map.put(x, newValue);
         }
+    }
+
+    /**
+     * @param text исходная строка текста со словами
+     * @return массив слов
+     */
+    private static String[] findAllWordsInText(String text) {
+        return text.toLowerCase().split(" ");
     }
 }
