@@ -35,7 +35,6 @@ public class FindPopularWord {
     private static String findMostPopularWordInText(String text) {
         String[] words = findAllWordsInText(text);
         String[][] uniqueWordsAndCounts = findUniqueWordsAndCounts(words);
-        //System.out.println("uniqueWordsAndCounts :" + Arrays.deepToString(uniqueWordsAndCounts));
         return getWordWithMaxCount(uniqueWordsAndCounts);
     }
 
