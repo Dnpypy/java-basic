@@ -26,9 +26,10 @@ public class HomeFindPopularWordVers3 {
     public static void main(String[] args) {
         // read source data
         //String text = "hello java world java hello I Hello Java World java i i i I I i i";
-       // String text = "hello,java-world\tjava hello: I? Hello! Java World. java-hello-java/world=world:world";
+       //String text = "hello,java-world\tjava hello: I? Hello! Java World. java-hello-java/world=world:world";
+        String text = "hello,java-world\tjava    hello: I? Hello! Java World. java";
         //String text = "hello java world java hello I Hello Java World java Hello java";
-        String text = "hello java world java hello I Hello Java World java Hello java I I I I I I I";
+       // String text = "hello java world java hello I Hello Java World java Hello java I I I I I I I";
         Map<String, Integer> keyNums = new HashMap<>();
 
         //processing
@@ -75,6 +76,9 @@ public class HomeFindPopularWordVers3 {
      * [^] - выбирает любой символ который НЕ перечислен внутри квадратных скобок
      */
     private static String[] findAllWordsInText(String text) {
-        return text.replaceAll("[^a-zA-Z]", " ").split(" ");
+        //return text.replaceAll("[^a-zA-Z]", " ").split(" ");
+        //return text.replaceAll("\\s[^a-zA-Z]", " ").split(" ");
+       // return text.replaceAll("\\s[^a-zA-Z]", "").toCharArray();
+        //return text.replaceAll("\\s+", " ").split(" ");
     }
 }
