@@ -79,6 +79,6 @@ public class HomeFindPopularWordVers3 {
         //return text.replaceAll("[^a-zA-Z]", " ").split(" ");
         //return text.replaceAll("\\s[^a-zA-Z]", " ").split(" ");
        // return text.replaceAll("\\s[^a-zA-Z]", "").toCharArray();
-        //return text.replaceAll("\\s+", " ").split(" ");
+        return text.replaceAll("\\s+", " ").split(" ");
     }
 }
