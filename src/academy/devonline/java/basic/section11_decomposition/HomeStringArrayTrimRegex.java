@@ -30,27 +30,10 @@ public class HomeStringArrayTrimRegex {
 //String text = "hello,java-world\tjava hello: I? Hello! Java World. java-hello-java/world=world:world";
 //String text = "hello,java-world\tjava    hello: I? Hello! Java World. java";
 //String text = "hello java world java hello I Hello Java World java Hello java";
-String text = "hello java world java hello I Hello Java World java Hello java I I I I I I I";
+        String text = "hello java world java hello I Hello Java World java Hello java I I I I I I I";
 
         //processing
         String[] temp = text.replaceAll("[^a-zA-Z]", " ").split("\\s+");
-
-//        StringBuilder sb = new StringBuilder();
-//        for (int i = 0; i < text.length(); i++) {
-//            var ch = text.charAt(i);
-//            if (Character.isLetter(ch)) {
-//                sb.append(ch);
-//            } else if(Character.isWhitespace(ch)){
-//                sb.append("");
-//            } else {
-//                sb.append(" ");
-//            }
-//        }
-//        String text2 = sb.toString();
-//        System.out.println(text2);
-//
-//        String[] temp = text2.trim().split(" ");
-//        System.out.println(Arrays.toString(temp));
 
         // display results
         System.out.println(Arrays.toString(temp));
